@@ -6,17 +6,10 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch Main",
+            "name": "Main",
             "request": "launch",
             "mainClass": "Main",
-            "projectName": "project 1_2eb5b7bf"
-        },
-        {
-            "type": "java",
-            "name": "Launch Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "project1_d51a24b9"
+            "projectName": "budget program_aecbffe3"
         },
         {
             "type": "java",
