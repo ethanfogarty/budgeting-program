@@ -1,0 +1,16 @@
+Design for program to track a budget in OOP style. Produce a visual calendar on the canvas with each day having estimated spending money, bills on due dates, Paydays and amounts. Bank account tracker and list of people included on the side of the calendar.
+
+Objects:
+	People
+		Attributes:{Name, Pay, Occupation, Hours Worked Per Week}
+		Behaviors:{Set Weekly Hours}
+	Bills
+		Attributes:{Name, Cost, Due Date}
+		Behaviors:{}
+	Accounts:
+		Attributes:{Type, Amount}
+		Behaviors:{Deposit, Withdraw}
+Design:
+	Main window:{South Panel, North Canvas}
+	North Canvas:{Used for the general display of information}
+	South Panel:{Buttons:{Create Person, Create Bill}}
