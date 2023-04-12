@@ -6,7 +6,7 @@ on the side of the calendar.
 Objects:
 	Person
 		Attributes:{Name, Pay, Occupation, Hours Worked Per Week}
-		Behaviors:{Set Weekly Hours}
+		Behaviors:{Set Weekly Hours, Render}
 	Bill
 		Attributes:{Name, Cost, Due Date}
 		Behaviors:{}
