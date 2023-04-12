@@ -17,7 +17,14 @@ public class Listener implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       
+        JButton button = (JButton) e.getSource();
+        if (button == panel.getExitButton()){
+            System.exit(0);
+        } else if (button == panel.getAddBillButton()){
+            System.out.println("Add Bill Clicked");
+        } else if (button == panel.getAddPersonButton()){
+            System.out.println("Add Person Clicked");
+        }
     }
     
 }

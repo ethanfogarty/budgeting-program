@@ -32,9 +32,9 @@ public class Canvas extends JPanel{
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         
-        Person p1 = new Person("Ethan", 12f, "Freddy's", 18f, 200, 100);
-        Person p2 = new Person("Sunny", 16f, "Sam's", 30f, 200, 200);
-        Bill b1 = new Bill(364f, "Versa Payment", "8", 200, 300, Color.green);
+        Person p1 = new Person("Ethan", 12f, "Freddy's", 18f, 600, 35);
+        Person p2 = new Person("Sunny", 16f, "Sam's", 30f, 600, 70);
+        Bill b1 = new Bill(364f, "Versa Payment", "8", 600, 105);
 
         objects.add(p1);
         objects.add(p2);
@@ -43,7 +43,19 @@ public class Canvas extends JPanel{
         for(var o: objects){
             o.render(g2);
         }
-        
-    }
 
+        g2.setColor(Color.white);
+        int xloc = 10;
+        int yloc = 20;
+        for (int i = 0; i < 29; i++){
+            if (xloc < 500) {
+                g2.drawRect(xloc, yloc, 20, 20);
+                xloc += 20;
+            } else {
+                xloc = 10;
+                yloc += 20;
+                g2.drawRect(xloc, yloc, 20, 20);
+            }
+        }
+    }
 }

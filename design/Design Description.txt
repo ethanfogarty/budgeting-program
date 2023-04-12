@@ -4,18 +4,30 @@ bills on due dates, Paydays and amounts. Bank account tracker and list of people
 on the side of the calendar.
 
 Objects:
-	Person
-		Attributes:{Name, Pay, Occupation, Hours Worked Per Week}
+	Noun (abstract):
+		Attributes:{X location, Y location, Color}
+		Behaviors:{Render (abstract),}
+
+	Person (extends Noun):
+		Attributes:{Name, Pay, Occupation, Hours Worked Per Week, Size(for text rendering)}
 		Behaviors:{Set Weekly Hours, Render}
-	Bill
+
+	Bill (extends Noun):
 		Attributes:{Name, Cost, Due Date}
-		Behaviors:{}
-	Account:
+		Behaviors:{Render,}
+
+	Account (extends Noun):
 		Attributes:{Type, Amount}
 		Behaviors:{Deposit, Withdraw}
-	Text:
+
+	TextRender (extends Noun):
 		Attributes:{Size, Color, Location}
 		Behaviors:{Set Size, Set Color, Render}
+
+	Day (extends Noun):
+		Attributes:{Number, Weekday, Wants Budget}
+		Behaviors:{}
+
 Design:
 	Main window:{South Panel, North Canvas}
 	North Canvas:{Used for the general display of information}

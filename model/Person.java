@@ -2,9 +2,6 @@ package model;
 
 import java.awt.Graphics2D;
 import java.util.ArrayList;
-
-import view.RenderText;
-
 import java.awt.Color;
 
 public class Person extends Noun{
@@ -13,8 +10,7 @@ public class Person extends Noun{
     private Float pay;
     private String occupation;
     private Float hoursWeekly;
-    private static final int size = 14;
-    private static final int spacing = 50;
+    private static final int size = 10;
 
 
     public Person(String name, Float pay, String occupation, Float hoursWeekly, int x, int y){
@@ -29,9 +25,9 @@ public class Person extends Noun{
     public void render(Graphics2D g2) {
         ArrayList<Noun> words = new ArrayList<Noun>();
         RenderText w1 = new RenderText(name, size, x, y, color);
-        RenderText w2 = new RenderText(pay.toString(), size, (x + spacing), y, color);
-        RenderText w3 = new RenderText(occupation, size, (x + spacing*2), y, color);
-        RenderText w4 = new RenderText(hoursWeekly.toString(), size, (x + spacing*4), y, color);
+        RenderText w2 = new RenderText(pay.toString(), size, w1.x + 50, y, color);
+        RenderText w3 = new RenderText(occupation, size, x, y + 10, color);
+        RenderText w4 = new RenderText(hoursWeekly.toString(), size, w3.x + 50, y + 10, color);
         words.add(w1);
         words.add(w2);
         words.add(w3);

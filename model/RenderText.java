@@ -1,10 +1,8 @@
-package view;
+package model;
 
 import java.awt.Graphics2D;
 import java.awt.Color;
 import java.awt.Font;
-
-import model.Noun;
 
 public class RenderText extends Noun{
 
