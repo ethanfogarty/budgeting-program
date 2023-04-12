@@ -14,6 +14,7 @@ public class Person extends Noun{
     private String occupation;
     private Float hoursWeekly;
     private static final int size = 14;
+    private static final int spacing = 50;
 
 
     public Person(String name, Float pay, String occupation, Float hoursWeekly, int x, int y){
@@ -28,9 +29,9 @@ public class Person extends Noun{
     public void render(Graphics2D g2) {
         ArrayList<Noun> words = new ArrayList<Noun>();
         RenderText w1 = new RenderText(name, size, x, y, color);
-        RenderText w2 = new RenderText(pay.toString(), size, x, y, color);
-        RenderText w3 = new RenderText(occupation, size, x, y, color);
-        RenderText w4 = new RenderText(hoursWeekly.toString(), size, x, y, color);
+        RenderText w2 = new RenderText(pay.toString(), size, (x + spacing), y, color);
+        RenderText w3 = new RenderText(occupation, size, (x + spacing*2), y, color);
+        RenderText w4 = new RenderText(hoursWeekly.toString(), size, (x + spacing*4), y, color);
         words.add(w1);
         words.add(w2);
         words.add(w3);

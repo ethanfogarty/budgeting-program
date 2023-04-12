@@ -9,40 +9,40 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
-import controller.WordGuessListener;
+import controller.Listener;
 
 public class Panel {
     
     private JFrame window;
 
-    private JButton[] alphabetButtons; 
-    private JButton newButton = new JButton("New");
-    private JTextField keyField = new JTextField(20);
-    private JTextField guessField = new JTextField(20);
+    private JButton addBillButton = new JButton("Add Bill");
+    private JButton addPersonButton = new JButton("Add Person");
+    private JButton exitButton = new JButton("Exit");
 
     private Canvas canvas;
-
 
     public Panel(JFrame window){
         this.window = window;
     }
 
     public void init(){
-        final int ALPHABET_SIZE = 26;
         Container cp = window.getContentPane();
 
         canvas = new Canvas(this);
         cp.add(BorderLayout.CENTER, canvas);
 
         JPanel southPanel = new JPanel();
-        southPanel.setLayout(new GridLayout(4, 7));
+        southPanel.setLayout(new GridLayout(1, 3));
 
-        WordGuessListener wordGuessListener = new WordGuessListener(this);
+        Listener listener = new Listener(this);
+        addBillButton.addActionListener(listener);
+        addPersonButton.addActionListener(listener);
+        exitButton.addActionListener(listener);
 
-        newButton.addActionListener(wordGuessListener);
-        southPanel.add(newButton);
+        southPanel.add(addPersonButton);
+        southPanel.add(addBillButton);
+        southPanel.add(exitButton);
         cp.add(BorderLayout.SOUTH, southPanel);
     }
 
@@ -54,8 +54,12 @@ public class Panel {
         return canvas;
     }
 
-    public JButton getNewButton() {
-        return newButton;
+    public JButton getAddPersonButton() {
+        return addPersonButton;
+    }
+
+    public JButton getAddBillButton() {
+        return addBillButton;
     }
 
 }
