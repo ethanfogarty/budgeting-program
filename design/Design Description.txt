@@ -1,12 +1,10 @@
 Design for program to track a budget in OOP style.
-Produce a visual calendar on the canvas with each day having estimated spending money,
-bills on due dates, Paydays and amounts. Bank account tracker and list of people included
-on the side of the calendar.
+Use the 50/30/20 budget method to display a pie chart with percentages and dollar amounts for each portion showing what money is being used for what purpose.
 
 Objects:
 	Noun (abstract):
 		Attributes:{X location, Y location, Color}
-		Behaviors:{Render (abstract),}
+		Behaviors:{Render (abstract)}
 
 	Person (extends Noun):
 		Attributes:{Name, Pay, Occupation, Hours Worked Per Week, Size(for text rendering)}
@@ -14,7 +12,11 @@ Objects:
 
 	Bill (extends Noun):
 		Attributes:{Name, Cost, Due Date}
-		Behaviors:{Render,}
+		Behaviors:{Render}
+
+	Pie Chart (extends Noun):
+		Attributes:{Portion Enum:{Needs, Wants, Savings/Debt}, Amount}
+		Behaviors:{Render, Calculate Needs, Calculate Wants, Calculate Savings/Debt}
 
 	Account (extends Noun):
 		Attributes:{Type, Amount}
@@ -24,9 +26,6 @@ Objects:
 		Attributes:{Size, Color, Location}
 		Behaviors:{Set Size, Set Color, Render}
 
-	Day (extends Noun):
-		Attributes:{Number, Weekday, Wants Budget}
-		Behaviors:{}
 
 Design:
 	Main window:{South Panel, North Canvas}
